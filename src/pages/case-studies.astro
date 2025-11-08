@@ -1,0 +1,209 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Case Studies: Transforming Brands with Expert Publicity";
+const pageDescription = "Explore real-world success stories from Media Maven Blog, where innovative publicity strategies have propelled businesses to new heights. Learn from our proven approaches and measurable results.";
+
+const caseStudies = [
+  {
+    id: 1,
+    title: "Tech Startup Launch: Skyrocketing Visibility",
+    client: "InnovateTech, a cutting-edge SaaS company entering a competitive market",
+    description: "We developed a multi-channel publicity blitz, including targeted media pitches, influencer collaborations, and viral social media challenges. By leveraging data-driven insights, we secured features in *Forbes* and *TechCrunch*.",
+    strategies: [
+      "Personalized Press Releases: Tailored narratives highlighting unique product features.",
+      "Strategic Influencer Partnerships: Collaborated with industry thought leaders for authentic endorsement.",
+      "Data-Driven Social Media Campaigns: Implemented targeted campaigns with measurable ROI."
+    ],
+    results: "200% increase in brand mentions, 3x growth in lead generation, featured in 15+ top publications"
+  },
+  {
+    id: 2,
+    title: "Retail Brand Revival",
+    client: "UrbanFashions, struggling to regain market presence after a PR crisis",
+    description: "Rebuilt the brand's reputation through strategic messaging, community engagement, and transparency initiatives. Leveraged storytelling to reconnect with core customers while attracting new demographics.",
+    strategies: [
+      "Crisis Communication Strategy: Developed transparent messaging to rebuild trust.",
+      "Community Partnership Program: Collaborated with local influencers for authentic brand advocacy.",
+      "Content Marketing Initiative: Created educational content addressing customer concerns."
+    ],
+    results: "40% improvement in brand sentiment, 25% increase in sales within 6 months, restored credibility with stakeholders"
+  },
+  {
+    id: 3,
+    title: "Non-Profit Awareness Campaign",
+    client: "EcoAction Global, seeking to expand their reach among Gen Z audiences",
+    description: "Designed an interactive, shareable campaign that combined environmental education with digital activism. The initiative went viral across multiple platforms, reaching over 2 million users in 3 weeks.",
+    strategies: [
+      "Interactive Content Strategy: Created shareable infographics and videos explaining complex environmental issues.",
+      "Multi-Platform Engagement: Utilized TikTok, Instagram, and LinkedIn to target different age groups.",
+      "Partnership with Environmental Advocates: Coordinated efforts with well-known sustainability figures."
+    ],
+    results: "2.3M impressions across platforms, 40% increase in volunteer sign-ups, partnership with 3 major environmental organizations"
+  }
+];
+---
+
+<_layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#ff6b6b] via-[#ff8e8e] to-[#ff6b6b] py-20 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjEuNSIgZmlsbD0iI2ZmZmZmZiIgZm9uY3Rpdml0eT0iMC4wNSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-10"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-4 py-1 mb-4 text-sm font-semibold text-white bg-[#fbbf24] rounded-full">
+          <i class="fas fa-lightbulb mr-2"></i> Real Results, Real Stories
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Case Studies: Transforming Brands with Expert Publicity
+        </h1>
+        <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+          Explore real-world success stories from Media Maven Blog, where innovative publicity strategies have propelled businesses to new heights. Learn from our proven approaches and measurable results.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">The Power of Storytelling</h2>
+        <div class="w-24 h-1 bg-[#ff6b6b] mx-auto mb-6"></div>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          At Media Maven Blog, we believe in the power of storytelling to elevate brands. Our case studies showcase how we've partnered with diverse businesses to craft compelling publicity campaigns that drive growth, engagement, and recognition. Dive into these success stories to see our strategies in action.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {caseStudies.map((study) => (
+          <article key={study.id} class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#ff6b6b]/10 flex items-center justify-center">
+                  <i class="fas fa-file-alt text-[#ff6b6b] text-xl"></i>
+                </div>
+                <span class="ml-3 text-sm font-semibold text-[#ff6b6b]">Case Study {study.id}</span>
+              </div>
+              
+              <h3 class="text-xl font-bold text-gray-800 mb-3">{study.title}</h3>
+              
+              <div class="mb-4">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-[#fbbf24] bg-[#fbbf24]/10 rounded-full">
+                  {study.client}
+                </span>
+              </div>
+              
+              <p class="text-gray-600 mb-6 leading-relaxed">{study.description}</p>
+              
+              <div class="space-y-3 mb-6">
+                <h4 class="font-semibold text-gray-800 flex items-start">
+                  <i class="fas fa-check-circle text-[#fbbf24] mt-1 mr-2 flex-shrink-0"></i>
+                  <span>Key Strategies:</span>
+                </h4>
+                <ul class="pl-6 space-y-2">
+                  {study.strategies.map((strategy, index) => (
+                    <li key={index} class="text-gray-600 flex items-start">
+                      <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#ff6b6b] mt-2 mr-2 flex-shrink-0"></span>
+                      {strategy}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div class="pt-4 border-t border-gray-100">
+                <h4 class="font-semibold text-gray-800 flex items-start">
+                  <i class="fas fa-chart-line text-[#fbbf24] mt-1 mr-2 flex-shrink-0"></i>
+                  <span>Results:</span>
+                </h4>
+                <p class="text-gray-600 mt-2 italic">{study.results}</p>
+              </div>
+            </div>
+            
+            <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+              <button class="text-[#ff6b6b] font-semibold flex items-center group">
+                Read Full Analysis
+                <i class="fas fa-arrow-right ml-2 text-sm group-hover:translate-x-1 transition-transform duration-200"></i>
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20 bg-gradient-to-r from-[#ff6b6b] to-[#ff8e8e]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Our Impact Across Industries</h2>
+        <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
+          Trusted by businesses worldwide to transform their public image through smart marketing strategies
+        </p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+            <div class="text-4xl font-bold text-white mb-2">150+</div>
+            <div class="text-white/90">Brands Transformed</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+            <div class="text-4xl font-bold text-white mb-2">500+</div>
+            <div class="text-white/90">Media Placements</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+            <div class="text-4xl font-bold text-white mb-2">4.9/5</div>
+            <div class="text-white/90">Client Satisfaction</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+            <div class="text-4xl font-bold text-white mb-2">2M+</div>
+            <div class="text-white/90">Reach Generated</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Ready to Tell Your Story?</h2>
+        <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          Let's discuss how we can craft a publicity strategy that elevates your brand. Our expert team is ready to partner with you.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 bg-[#ff6b6b] text-white font-bold rounded-lg hover:bg-[#ff5252] transition-colors duration-300 transform hover:scale-105 shadow-lg">
+            Start Your Campaign
+          </button>
+          <button class="px-8 py-4 bg-white text-[#ff6b6b] font-bold rounded-lg border-2 border-[#ff6b6b] hover:bg-[#ff6b6b]/10 transition-colors duration-300">
+            View All Case Studies
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</layout>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .case-study-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+</style>

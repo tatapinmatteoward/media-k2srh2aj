@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About Media Maven Blog";
+const pageDescription = "Learn about Media Maven Blog, the ultimate resource for expert publicity strategies designed to elevate businesses and brands in today's competitive media landscape.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative overflow-hidden bg-gradient-to-br from-primary to-accent py-20 md:py-32">
+    <div class="absolute inset-0 bg-black opacity-10"></div>
+    <div class="container relative mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 animate-fadeIn">
+        About Media Maven Blog
+      </h1>
+      <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto font-light">
+        Expert Publicity Strategies for Businesses and Brands
+      </p>
+    </div>
+  </div>
+
+  <!-- Story Section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <div class="relative">
+            <div class="w-full h-80 bg-gradient-to-r from-primary to-accent rounded-2xl shadow-xl"></div>
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-400 rounded-full opacity-20 blur-xl"></div>
+            <div class="absolute -top-6 -left-6 w-40 h-40 bg-primary rounded-full opacity-20 blur-xl"></div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+          <p class="text-gray-700 mb-4 text-lg">
+            Media Maven Blog was born from years of hands-on experience in public relations, digital marketing, and brand storytelling. We've seen startups skyrocket to success and established brands reclaim their spotlight through smart, strategic publicity.
+          </p>
+          <p class="text-gray-700 text-lg">
+            Our modern, approachable vibe—infused with vibrant coral accents—reflects our commitment to making complex strategies feel accessible and exciting.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">What Drives Us</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          We're passionate about helping businesses and brands navigate the evolving media landscape with confidence
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: "fas fa-bullhorn",
+            title: "Strategic Insight",
+            description: "Cutting-edge publicity strategies tailored to your brand's unique voice"
+          },
+          {
+            icon: "fas fa-lightbulb",
+            title: "Innovation First",
+            description: "Forward-thinking approaches to keep your brand ahead of the curve"
+          },
+          {
+            icon: "fas fa-handshake",
+            title: "Partnership Focus",
+            description: "Building long-term relationships based on trust and results"
+          }
+        ].map((value, index) => (
+          <div key={index} class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-6">
+              <i class={value.icon}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+            <p class="text-gray-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet Our Experts</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          A team of seasoned media professionals dedicated to your success
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          {
+            name: "Alex Morgan",
+            role: "Founder & Chief Strategist",
+            bio: "15+ years in PR and brand development"
+          },
+          {
+            name: "Jamie Chen",
+            role: "Digital Director",
+            bio: "Specializing in social media and digital campaigns"
+          },
+          {
+            name: "Taylor Reed",
+            role: "Content Creator",
+            bio: "Crafting compelling stories that resonate"
+          },
+          {
+            name: "Jordan Smith",
+            role: "Media Relations Specialist",
+            bio: "Building bridges between brands and journalists"
+          }
+        ].map((member, index) => (
+          <div key={index} class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="h-48 bg-gradient-to-r from-primary to-accent"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900">{member.name}</h3>
+              <p class="text-primary font-medium mb-2">{member.role}</p>
+              <p class="text-gray-600 text-sm">{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24 bg-gradient-to-r from-primary to-accent">
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Ready to Elevate Your Brand?
+      </h2>
+      <p class="text-xl text-white mb-10 max-w-2xl mx-auto">
+        Join thousands of businesses transforming their visibility with our expert strategies
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-white text-primary font-bold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105">
+          Get Started Today
+        </button>
+        <button class="bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-full hover:bg-white/10 transition-colors duration-300">
+          View Our Services
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+</style>

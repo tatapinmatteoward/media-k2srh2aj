@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Ultimate Guides to Media Mastery";
+const pageDescription = "Discover expert guides on publicity strategies, media relations, and brand building. Tailored for businesses and brands seeking to elevate their presence with actionable insights from Media Maven Blog.";
+const featuredGuides = [
+  {
+    id: 1,
+    title: "Building a Bulletproof PR Strategy",
+    excerpt: "Kickstart your publicity journey with our comprehensive guide to creating a PR strategy that stands the test of time.",
+    readTime: "8 min read"
+  },
+  {
+    id: 2,
+    title: "Mastering Media Relations",
+    excerpt: "Learn how to build lasting relationships with journalists and influencers to amplify your brand's voice.",
+    readTime: "10 min read"
+  },
+  {
+    id: 3,
+    title: "Crafting Compelling Brand Narratives",
+    excerpt: "Transform your business story into a narrative that resonates with audiences and drives engagement.",
+    readTime: "7 min read"
+  },
+  {
+    id: 4,
+    title: "Navigating Crisis Communications",
+    excerpt: "Protect your brand reputation with strategic crisis communication frameworks that work in real-time.",
+    readTime: "9 min read"
+  }
+];
+
+const whyChooseUs = [
+  {
+    title: "Actionable Insights",
+    description: "Step-by-step strategies you can implement immediately.",
+    icon: "fas fa-lightbulb"
+  },
+  {
+    title: "Real-World Examples",
+    description: "Case studies from successful brands we've helped.",
+    icon: "fas fa-chart-line"
+  },
+  {
+    title: "Expert Authorship",
+    description: "Written by industry pros with years of experience.",
+    icon: "fas fa-user-check"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#ff6b6b] via-[#ff8e8e] to-[#ff6b6b] py-20 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10">
+      <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+      <div class="absolute top-40 right-20 w-72 h-72 bg-[#fbbf24] rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-20 left-1/3 w-60 h-60 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Ultimate Guides to <span class="underline underline-offset-4 decoration-[#fbbf24]">Media Mastery</span>
+        </h1>
+        <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+          Discover expert guides on publicity strategies, media relations, and brand building. 
+          Tailored for businesses and brands seeking to elevate their presence with actionable insights from Media Maven Blog.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-white text-[#ff6b6b] hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+            Explore All Guides
+          </button>
+          <button class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition-all duration-300">
+            <i class="fas fa-download mr-2"></i> Download Guide Bundle
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Welcome to Our Guides Hub</h2>
+        <div class="w-24 h-1 bg-[#ff6b6b] mx-auto mb-8"></div>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          At Media Maven Blog, we're passionate about empowering businesses and brands with proven publicity strategies. 
+          Our guides are your roadmap to mastering media relations, crafting compelling narratives, and amplifying your voice 
+          in a crowded digital landscape. Whether you're a startup founder or a seasoned marketer, these resources are designed 
+          to be approachable yet packed with expert advice.
+        </p>
+      </div>
+
+      <!-- Why Choose Us Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {whyChooseUs.map((item, index) => (
+          <div key={index} class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2">
+            <div class="w-16 h-16 rounded-full bg-[#ff6b6b]/10 flex items-center justify-center mb-6">
+              <i class={`${item.icon} text-2xl text-[#ff6b6b]`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+            <p class="text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Guides Section -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Guides</h2>
+        <div class="w-24 h-1 bg-[#ff6b6b] mx-auto mb-8"></div>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+          Dive into our most popular resources that have helped hundreds of businesses achieve media success
+        </p>
+      </div>
+
+      <!-- Guides Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        {featuredGuides.map((guide) => (
+          <div key={guide.id} class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3">
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold text-gray-900">{guide.title}</h3>
+                <span class="bg-[#fbbf24]/10 text-[#fbbf24] text-sm font-semibold py-1 px-3 rounded-full">
+                  {guide.readTime}
+                </span>
+              </div>
+              <p class="text-gray-700 mb-6 leading-relaxed">{guide.excerpt}</p>
+              <a href="#" class="inline-flex items-center text-[#ff6b6b] font-semibold hover:text-[#ff5252] transition-colors">
+                Read Full Guide
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-20 bg-gradient-to-r from-[#ff6b6b] to-[#fbbf24] rounded-3xl p-10 text-center">
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Want More Guides?</h3>
+        <p class="text-white/90 max-w-2xl mx-auto mb-8">
+          Subscribe to our newsletter and get access to exclusive guides, templates, and strategies delivered straight to your inbox.
+        </p>
+        <div class="max-w-md mx-auto flex">
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            class="flex-grow px-6 py-4 rounded-l-full focus:outline-none focus:ring-2 focus:ring-white"
+          />
+          <button class="bg-white text-[#ff6b6b] font-bold px-8 py-4 rounded-r-full hover:bg-gray-100 transition-colors">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 20s infinite linear;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+</style>

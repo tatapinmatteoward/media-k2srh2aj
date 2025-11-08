@@ -1,0 +1,284 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Resources Hub: Elevate Your Brand's Publicity Game";
+const pageDescription = "Discover a treasure trove of expert resources on publicity strategies, from in-depth guides and blog articles to practical tools and webinars designed to help businesses and brands shine in the media spotlight.";
+
+const featuredPosts = [
+  {
+    title: "The Ultimate Guide to Crafting a Press Release That Gets Noticed",
+    excerpt: "Learn step-by-step how to write compelling releases that land in journalists' inboxes and get picked up by major outlets.",
+    link: "#"
+  },
+  {
+    title: "Social Media Crisis Management: Your 5-Step Plan",
+    excerpt: "Navigate negative attention with confidence using our proven framework to turn PR disasters into opportunities.",
+    link: "#"
+  },
+  {
+    title: "How to Build Relationships with Journalists in 2024",
+    excerpt: "Craft lasting connections with media professionals that result in consistent coverage and brand visibility.",
+    link: "#"
+  }
+];
+
+const resourceCategories = [
+  {
+    title: "Guides & Ebooks",
+    description: "Comprehensive step-by-step resources",
+    icon: "fas fa-book-open",
+    count: "24"
+  },
+  {
+    title: "Blog Articles",
+    description: "Latest insights and strategies",
+    icon: "fas fa-newspaper",
+    count: "156"
+  },
+  {
+    title: "Tools & Templates",
+    description: "Practical resources for your team",
+    icon: "fas fa-tools",
+    count: "32"
+  },
+  {
+    title: "Webinars & Events",
+    description: "Live learning sessions",
+    icon: "fas fa-video",
+    count: "8"
+  }
+];
+
+const testimonials = [
+  {
+    quote: "These resources transformed how we approach PR. We've doubled our media mentions since implementing their strategies.",
+    author: "Sarah Johnson",
+    role: "Marketing Director, TechStart Inc."
+  },
+  {
+    quote: "The press release templates alone saved us countless hours while improving our coverage quality significantly.",
+    author: "Michael Chen",
+    role: "CEO, GrowthCo"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-amber-50 to-coral-50 py-16 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-coral-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+      <div class="absolute top-0 left-0 w-64 h-64 bg-amber-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          Resources Hub
+        </h1>
+        <p class="text-xl md:text-2xl text-coral-600 font-semibold mb-8">
+          Elevate Your Brand's Publicity Game
+        </p>
+        <p class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
+          Discover a treasure trove of expert resources on publicity strategies, from in-depth guides and blog articles to practical tools and webinars designed to help businesses and brands shine in the media spotlight.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#featured-posts" class="px-8 py-3 bg-coral-500 hover:bg-coral-600 text-white font-bold rounded-full shadow-lg transform hover:-translate-y-1 transition duration-300">
+            Explore Resources
+          </a>
+          <a href="#testimonials" class="px-8 py-3 bg-white hover:bg-amber-50 text-coral-600 border-2 border-coral-500 font-bold rounded-full shadow-lg transition duration-300">
+            See Success Stories
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Posts Section -->
+  <section id="featured-posts" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Blog Posts</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Stay ahead with our latest articles packed with actionable advice.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredPosts.map((post, index) => (
+          <div key={index} class="bg-gradient-to-br from-white to-amber-50 rounded-2xl shadow-lg overflow-hidden border border-amber-100 transform transition duration-500 hover:scale-105 hover:shadow-xl">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 rounded-full bg-coral-100 flex items-center justify-center mr-4">
+                  <i class="fas fa-file-alt text-coral-500 text-xl"></i>
+                </div>
+                <span class="text-sm font-semibold text-coral-600 bg-coral-50 px-3 py-1 rounded-full">
+                  {index === 0 ? "Guide" : index === 1 ? "Crisis Management" : "Relationship Building"}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{post.title}</h3>
+              <p class="text-gray-600 mb-4">{post.excerpt}</p>
+              <a href={post.link} class="inline-flex items-center text-coral-600 font-semibold hover:text-coral-700">
+                Read more
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Resource Categories -->
+  <section class="py-16 bg-gradient-to-br from-coral-50 to-amber-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Browse Our Resources</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Everything you need to master publicity strategy, organized by category.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {resourceCategories.map((category, index) => (
+          <div key={index} class="bg-white rounded-2xl shadow-md p-6 text-center transform transition duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div class="w-16 h-16 bg-coral-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class={`${category.icon} text-coral-500 text-2xl`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{category.title}</h3>
+            <p class="text-gray-600 mb-4">{category.description}</p>
+            <div class="inline-block bg-coral-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+              {category.count} resources
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Downloads -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Downloadables & Tools</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Access our suite of downloadable resources designed to instantly boost your PR efforts.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-coral-500 mt-1 mr-3"></i>
+              <span class="text-gray-700">Press Release Templates</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-coral-500 mt-1 mr-3"></i>
+              <span class="text-gray-700">Media Pitch Playbook</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-coral-500 mt-1 mr-3"></i>
+              <span class="text-gray-700">Crisis Communication Checklist</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-coral-500 mt-1 mr-3"></i>
+              <span class="text-gray-700">Journalist Contact Database</span>
+            </li>
+          </ul>
+          <button class="px-6 py-3 bg-gradient-to-r from-coral-500 to-amber-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300">
+            Download All Resources
+          </button>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <div class="relative">
+            <div class="w-64 h-64 bg-gradient-to-br from-coral-200 to-amber-200 rounded-2xl shadow-xl transform rotate-6"></div>
+            <div class="absolute top-0 w-64 h-64 bg-white rounded-2xl shadow-xl transform -rotate-6 flex items-center justify-center">
+              <div class="text-center p-4">
+                <div class="w-16 h-16 bg-coral-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-download text-coral-500 text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Resource Library</h3>
+                <p class="text-sm text-gray-600">100+ free downloads</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-16 bg-gradient-to-br from-amber-50 to-coral-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Hear from brands who transformed their publicity with our resources.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-white rounded-2xl shadow-lg p-8 border border-amber-100">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 rounded-full bg-coral-100 flex items-center justify-center mr-4">
+                <i class="fas fa-quote-left text-coral-500 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900">{testimonial.author}</h4>
+                <p class="text-coral-600 text-sm">{testimonial.role}</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">"{testimonial.quote}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-coral-500 to-amber-500">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Amplify Your Brand?</h2>
+      <p class="text-xl text-amber-100 max-w-2xl mx-auto mb-8">
+        Join thousands of businesses leveraging our resources to build stronger media presence.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#" class="px-8 py-3 bg-white text-coral-600 hover:bg-amber-50 font-bold rounded-full shadow-lg transform hover:-translate-y-1 transition duration-300">
+          Get Started Today
+        </a>
+        <a href="#" class="px-8 py-3 bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold rounded-full shadow-lg transition duration-300">
+          Schedule a Demo
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 15s infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+</style>
